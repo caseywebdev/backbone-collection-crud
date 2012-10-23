@@ -16,9 +16,7 @@
         success = options.success;
         options.success = function(resp, status, xhr) {
           _this.reset(_this.parse(resp, xhr), options);
-          if (success) {
-            return success(_this, resp, options);
-          }
+          return typeof success === "function" ? success(_this, resp, options) : void 0;
         };
         return this.sync('create', this, options);
       },
@@ -29,9 +27,7 @@
         success = options.success;
         options.success = function(resp, status, xhr) {
           _this.reset([], options);
-          if (success) {
-            return success(_this, resp, options);
-          }
+          return typeof success === "function" ? success(_this, resp, options) : void 0;
         };
         return this.sync('delete', this, options);
       }

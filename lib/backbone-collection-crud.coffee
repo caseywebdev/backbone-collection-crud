@@ -8,7 +8,7 @@ _ = @_ or require 'underscore'
       success = options.success
       options.success = (resp, status, xhr) =>
         @reset @parse(resp, xhr), options
-        success @, resp, options if success
+        success? @, resp, options
       @sync 'create', @, options
 
     destroy: (options) ->
@@ -16,7 +16,7 @@ _ = @_ or require 'underscore'
       success = options.success
       options.success = (resp, status, xhr) =>
         @reset [], options
-        success @, resp, options if success
+        success? @, resp, options
       @sync 'delete', @, options
 
   Backbone
