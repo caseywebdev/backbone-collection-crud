@@ -1,13 +1,13 @@
-backbone-relations [![Build Status](https://secure.travis-ci.org/caseywebdev/backbone-relations.png)](http://travis-ci.org/caseywebdev/backbone-relations)
+backbone-collection-crud [![Build Status](https://secure.travis-ci.org/caseywebdev/backbone-collection-crud.png)](http://travis-ci.org/caseywebdev/backbone-collection-crud)
 =============
 
-Backbone one-to-one, one-to-many, and many-to-many relationships for the browser and nodejs.
+Add `save` and `destroy` to your collections.
 
 Install
 -------
 
 ```bash
-npm install backbone-relations
+npm install backbone-collection-crud
 ```
 
 Use
@@ -17,7 +17,7 @@ This plugin extends the Backbone core, so you'll need to pass in your instance o
 
 ```coffee
 Backbone = require 'backbone'
-require('backbone-relations') Backbone
+require('backbone-collection-crud') Backbone
 ```
 
 This is done automatically in the browser.
