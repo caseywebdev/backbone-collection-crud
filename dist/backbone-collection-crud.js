@@ -14,8 +14,8 @@
           options.parse = true;
         }
         success = options.success;
-        options.success = function(resp, status, xhr) {
-          _this.reset(_this.parse(resp, xhr), options);
+        options.success = function(__, resp, options) {
+          _this.reset(_this.parse(resp, options), options);
           return typeof success === "function" ? success(_this, resp, options) : void 0;
         };
         return this.sync('create', this, options);
@@ -25,7 +25,7 @@
           _this = this;
         options = options ? _.clone(options) : {};
         success = options.success;
-        options.success = function(resp, status, xhr) {
+        options.success = function(__, resp, options) {
           _this.reset([], options);
           return typeof success === "function" ? success(_this, resp, options) : void 0;
         };
