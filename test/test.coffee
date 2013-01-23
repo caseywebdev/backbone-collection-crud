@@ -1,6 +1,6 @@
 should = require('chai').should()
 Backbone = require 'backbone'
-require('../') Backbone
+require '../'
 
 describe 'save', ->
   it 'should exist on a new collection', ->
