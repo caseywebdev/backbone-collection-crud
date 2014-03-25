@@ -15,9 +15,10 @@
         options.parse = true;
       }
       success = options.success;
-      options.success = function(__, resp, options) {
+      options.success = function(resp, status, options) {
         _this.reset(_this.parse(resp, options), options);
-        return typeof success === "function" ? success(_this, resp, options) : void 0;
+        typeof success === "function" ? success(_this, resp, status, options) : void 0;
+        _this.trigger('sync', _this, resp, options);
       };
       return this.sync('create', this, options);
     },
@@ -26,9 +27,10 @@
         _this = this;
       options = options ? _.clone(options) : {};
       success = options.success;
-      options.success = function(__, resp, options) {
+      options.success = function(resp, status, options) {
         _this.reset([], options);
-        return typeof success === "function" ? success(_this, resp, options) : void 0;
+        typeof success === "function" ? success(_this, resp, status, options) : void 0;
+        _this.trigger('sync', _this, resp, options);
       };
       return this.sync('delete', this, options);
     }
