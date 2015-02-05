@@ -2,7 +2,7 @@
   "name": "backbone-collection-crud",
   "version": "0.1.0",
   "author": "Casey Foster <casey@caseywebdev.com>",
-  "licence": "MIT",
+  "license": "MIT",
   "main": "dist/backbone-collection-crud",
   "repository": {
     "type": "git",
